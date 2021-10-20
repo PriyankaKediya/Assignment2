@@ -8,7 +8,7 @@ import Game from '../Models/game';
 /* GET home page. */
 router.get('/', function(req, res, next) 
 {
-  res.render('index', { title: 'Home', page: 'home' });
+  res.render('index', { title: 'Home' });
 });
 
 /* GET home page. */
