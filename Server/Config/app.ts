@@ -19,6 +19,7 @@ import indexRouter from '../Routes/index';
 const app = express();
 export default app;
 
+/*
 //DB configuration
 import * as DBConfig from './db';
 mongoose.connect(DBConfig.LocalURI, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -33,7 +34,7 @@ db.once("open", function()
 {
   console.log(`Connected to MongoDB at: ${DBConfig.HostName} `)
 });
-
+*/
 
 // view engine setup
 app.set('views', path.join(__dirname, '../Views'));

@@ -38,16 +38,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const index_1 = __importDefault(require("../Routes/index"));
 const app = (0, express_1.default)();
 exports.default = app;
-//DB configuration
-const DBConfig = __importStar(require("./db"));
-mongoose_1.default.connect(DBConfig.LocalURI, { useNewUrlParser: true, useUnifiedTopology: true });
-const db = mongoose_1.default.connection; //alias for the mongoose connection
-db.on("error", function () {
-    console.error("Connection error");
-});
-db.once("open", function () {
-    console.log(`Connected to MongoDB at: ${DBConfig.HostName} `);
-});
+
 // view engine setup
 app.set('views', path_1.default.join(__dirname, '../Views'));
 app.set('view engine', 'ejs');

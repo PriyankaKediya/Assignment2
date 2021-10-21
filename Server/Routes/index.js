@@ -13,8 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 exports.default = router;
-//get a reference to the Game Model Class
-const game_1 = __importDefault(require("../Models/game"));
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('index', { title: 'Home', page: 'home' });
