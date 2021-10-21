@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact form</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+<link href="projectStyles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="wrapper">
+<header>Anup Rai Realty Inc.
+</header>
+
+<nav>
+<ul>
+   <li><a href="home.html">Home</a></li>
+   <li><a href="Listings.html">Active Listings</a></li>
+   <li id="page">Contact</li>
+   <li><a href="Sitemap.html">Sitemap</a></li>
+</ul>
+</nav>
+
+<main>
+<h2><span lang="en-ca">Contact us for your Dream Home</span></h2><br>
+<p>Just fill out the form below and we'll get right back to you.</p><br>
+
+<form method="post" action="mailto:anupRai@anupRaiRE.ca">
+	
+<fieldset>
+	<legend><h2>Personal Information</h2></legend>
+	<label>Your Name:</label>
+	<input name="name" type="text" required="required" placeholder="First Name*"/>
+	<input name="name" type="text" required="required" placeholder="Last Name*"/>
+	<br><br>
+	<label>Your Email:</label>
+	<input name="txtEmail" type="email" required="required" placeholder="Email Address*"/><br><br>
+	<label>Your Contact:</label>
+	<input name="contact" type="tel" required="required"placeholder="Contact Number*" />
+</fieldset><br>
+	
+<fieldset>
+	<legend><h2>House Information</h2></legend>
+	<br>
+	<label>Type of Property:</label>
+	
+	<select name="property" required="required">
+	<option selected = "selected" value="attach"> Townhouse</option>
+	<option value="semi">Semi-detached House</option>
+	<option value="detach">Detached House</option>
+	<option value="condo">Condominium</option>
+	<option value="mansion">Duplex/Triplex</option>
+	</select><br><br>
+	
+	<label>Neighbourhood:</label>
+	
+	<select name="area" required="required">
+	<option selected = "selected" value="toronto"> Toronto </option>
+	<option value="vaughan">Vaughan</option>
+	<option value="markham">Markham</option>
+	<option value="etobi">Etobicoke</option>
+	</select><br><br>
+	
+	<label>Bedroom</label>
+	<input name="room" type="number" required="required" min="1" max="10"/><br><br>
+	
+	<label>Bathroom</label>
+	<input name="room" type="number" required="required" min="1" max="10"/><br><br>
+	
+	<label>Minimum Price: $</label>
+	<input name="room" type="number" required="required"/><br><br>
+	
+	<label>I'd like to speak with someone about...</label><br>
+	<select name="interest" required="required">
+	<option selected = "selected" value="choice">Investing in Real Estate</option>
+	<option value="choice"> Buying a home for myself</option>
+	<option value="choice"> Selling my home</option>
+	<option value="choice"> Interested in pre-construction condos</option>
+	<option value="choice"> Looking to rent a place to live</option>
+	<option value="choice"> Looking to rent out my place</option>
+    <option value="choice"> Others (Please provide details in the comment box below)</option>
+	</select><br><br>
+	
+	<label>Comments:</label><br>
+	<textarea name="comment" type="text" rows="4" cols="70" maxlength="50" placeholder="Is there anything else we should know?"></textarea><br><br>
+	</fieldset><br>
+
+	<!--submit button-->
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="btnSubmit" id="submit" type="submit" value="Send" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	
+	<!--reset button-->
+	<input name="btnReset" id= "submit" type="reset" value="clear"></p>
+	</form>
+    </main>
+	
+<aside>
+<figure>
+    <img src="images/AgentPic.jpg" width="300" height="400" alt="agentpic">
+		<br>Phone: (416) 123-4567
+		<br>Email: <a href="mailto:arai@anupRaiRE.ca">arai234@anupRaiRE.ca</a>
+</figure>
+</aside> 
+  
+   <!--Copyright--> 
+<footer>
+<i>Copyright &copy; Priyanka Kediya - Web Interface Design - Winter Semester</i>
+</footer>
+</div>
+</body>
+</html>
+
+

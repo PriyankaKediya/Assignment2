@@ -1,0 +1,88 @@
+form {
+  width: 561px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+fieldset #errorAge,
+#errorEmail,
+#errorPostalCode,
+#errorProvince,
+#errorPassword {
+  display: none;
+  color: red;
+  margin-top: 10px;
+}
+
+fieldset {
+  position: relative;
+  padding: 5px 30px 30px 30px;
+  background: white;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 25px;
+}
+
+body {
+  line-height: 1;
+  width: 800px;
+  margin: 0 auto;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background: lavender;
+  text-align: center;
+}
+fieldset label {
+  width: 8em;
+  text-align: right;
+  float: left;
+  clear: left;
+
+  margin-top: 5px;
+  padding-bottom: 8px;
+}
+fieldset input {
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+
+h1 {
+  font-family: tangerine, cursive;
+  font-size: 2.9em;
+  color: darkblue;
+}
+
+h2 {
+  font-family: tangerine, cursive;
+  font-size: 2.4em;
+  color: darkblue;
+}
+
+#buttonContainer {
+  width: 100%;
+  text-align: center;
+}
+
+#buttonContainer :hover {
+  background-color: lightblue;
+  color: darkblue;
+}
+
+#submitinfo {
+  font-family: tangerine, cursive;
+  font-size: 1.4em;
+}
+#resetpage {
+  font-family: tangerine, cursive;
+  font-size: 1.4em;
+}
+
+footer {
+  font-family: tangerine, cursive;
+  font-size: 1.4em;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+}

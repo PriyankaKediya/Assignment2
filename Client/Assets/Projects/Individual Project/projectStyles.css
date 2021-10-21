@@ -1,0 +1,292 @@
+﻿* { 
+	box-sizing: border-box;
+    margin: 0;
+}
+body {
+	font-family: Verdana, Arial, sans-serif;
+	padding-top:20px;
+	}
+	
+	
+input#submit:hover {
+    background-color: blue;
+    color: white;
+    border: 1px solid black;
+}
+
+input[type=button], input[type=submit],input[type=reset] {
+    background-color: white; 
+    color: black;	
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size:1.2em;
+    padding:8px 28px;
+}
+
+fieldset {
+	padding: 10px;
+	border-radius: 10px;
+	border-color: #90C7E3;
+	box-shadow: 5px 5px 5px #999999;
+}
+
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+table{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+main ul {
+	padding-right:20px;
+    list-style-type: none ; }	
+		  
+main div{
+	height: 120px;
+	width: 50 px;  
+	color: white;
+	opacity: 1;
+    font-size: 2em;
+}
+
+#toronto{
+	background-image: url(c2.jpg);
+    background-repeat: no-repeat;		  
+    float:right;
+	padding-right: 70px;
+}
+
+#etobicoke{
+	background-image: url(e1.jpg);
+    background-repeat: no-repeat;			 	  
+}
+
+#vaughan{
+	background-image: url(v.jpg);
+    background-repeat: no-repeat;	
+    float:right;	
+    padding-right: 50px;		 
+}
+
+#markham{
+	background-image: url(m.jpg);
+    background-repeat: no-repeat;			 	  
+}
+
+#wrapper {	
+    background-image: linear-gradient(to bottom, #FFFFFF,#90C7E3);
+    background-repeat: no-repeat;		   
+	border: 1px solid #000033; 
+	box-shadow: 1px 1px #000033; 
+}
+
+main {  
+    background-color:white;
+	color: #000000;
+	padding: 1em; 
+}
+
+div.gallery { 
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 180px;
+    height: auto;
+}
+
+aside { 
+	text-align: center; 
+	color: #002171; 
+}
+
+footer {
+	background-color:rgba(255,255,255,0.8) ;
+	font-size: 70 pt;
+	text-align: center;
+	padding: 0.5em 0;
+	color: black;
+}
+
+img { 
+	padding: 0.5em; 
+}
+
+h2 { 
+    text-align: center;
+    background-color: #90C7E3;
+	color: rgba(255,255,255,0.8);
+    font-family: Times new roman;
+	color: #002171; 
+	background-image: radial-gradient( #FFFFFF,#90C7E3);
+}
+
+.floatRight{
+	float:right;
+	margin-left:6px;	
+}
+
+/* Styles to configure navigation links as horizontal areas */
+nav ul { 
+	list-style-type: none;
+    padding-left: 0; 
+	border-top: 1px solid #EEEEEE;
+}
+
+nav li { 
+	border-bottom: 1px solid #EEEEEE;  
+    text-align: center;
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+/* navigation list properties like color, hover*/
+nav a { 
+	text-decoration: none;
+	font-weight: bold;
+}
+
+nav a:link {
+	color: #DC260C;
+}
+
+nav a:hover {
+	color: #FF3737;
+}
+
+a {
+	text-decoration: none;
+    color : #002171; 
+}
+   
+a:link {
+	color: #DC260C;
+}
+a:hover {
+	color: #FF3737;
+}
+
+/* make the current page's link look different */
+nav #page { 
+	font-weight: bold;
+    color: ##002171; 
+}
+
+/* Force older versions of Internet Explorer to display these HTML5 elements with block display. */
+header, nav, main, footer, aside, figure { 
+	display: block; 
+}
+
+/* Medium Display */
+@media (min-width: 600px) {
+#wrapper { 
+ 	display: grid; 
+	grid-template-columns: 55% auto;
+	grid-template-rows: auto auto auto auto;
+	 }
+	 /* grid layout for page */
+header { 
+	grid-row: 1 / 2; grid-column: 1 / 3; }
+nav    { 
+	grid-row: 2 / 3; grid-column: 1 / 3; }
+main   { 
+	grid-row: 3 / 4; grid-column: 1 / 2; }
+aside  { 
+	grid-row: 3 / 4; grid-column: 2 / 3; }
+footer {
+ 	grid-row: 4 / 5; grid-column: 1 / 3; }
+nav ul { 
+	display: flex; 
+	flex-direction: row; 
+	flex-wrap: nowrap; 
+	justify-content: space-around; }
+nav ul li { 
+	border-bottom: none; } 
+ 							 }
+/* Large Display */
+@media (min-width: 1024px) {
+
+nav ul { 
+	display: flex; 
+	flex-direction: column; 
+	flex-wrap: nowrap; 
+}
+
+#wrapper { 
+	width: 80%; 
+    margin: auto; 
+    max-width: 1200px; 
+    display: grid; 
+	grid-template-columns: 150px auto auto;
+	grid-template-rows: auto auto auto ; 
+}
+
+header { 
+	grid-row: 1 / 2; 
+	grid-column: 1 / 4; 
+}
+
+nav    { 
+	grid-row: 2 / 3; 
+	grid-column: 1 / 2; 
+}
+
+main   { 
+	grid-row: 2 / 3; 
+	grid-column: 2 / 3; 
+}
+
+aside  { 
+    grid-row: 2 / 3; 
+    grid-column: 3 / 4; 
+}
+
+footer { 
+	grid-row: 3 / 4; 
+	grid-column: 1 / 4; 
+}	 
+
+.floatRight {
+	float: right;
+}	 
+
+.clearBoth {
+	clear: both;
+}
+	 
+h3{color : #002171;}
+
+h4{color : #002171;}
+
+/* different header styles */
+header{
+	background-color: #90C7E3; 
+	background-image:url(RoyalLePage.gif);
+	background-position: right;
+	background-repeat: no-repeat;
+	height: 70px;
+	text-align:left;
+	padding-left:3em;
+	font-size: 3em;
+	color : #002171; 
+	letter-spacing: 0.10em;
+	
+	padding-bottom: 0.5em; 
+	font-family: castellar;
+	margin-bottom: 0; 
+    margin-top: 0;
+	line-height:1.2em;
+}

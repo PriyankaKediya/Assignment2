@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        Assignment 4
+        Student name: Priyanka Kediya
+        Student ID: 301184183
+        Date: 15 July 2021
+
+        Filename: Assignment4.html
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=page-width, initial-scale=1.0">
+   
+    <link rel= "stylesheet" href="Assignment4.css" />
+    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+    <title> Assignment #4 </title>
+
+</head>
+<body>
+
+    <article>
+    <div class="container">
+        <header  >
+            <img src = "bannerjs.jpg">
+        </header>
+            <h1>
+               Blue Water Swim Academy Member Registration
+            </h1>          
+       
+        <h2>
+             Please complete all the fields below:
+        </h2>
+
+      
+        <form action="Assignment4Result.html" novalidate>
+            <fieldset id="personalinfo">
+                
+                <label for="fname">First Name: </label>
+                <input id="fname" name="firstname" type="text" required="required" />
+                <br>
+                <label for="lname">Last Name:</label>
+                <input id="lname" name="lastname" type="text" required="required" />
+                <br>
+                <label for="address"> Address: </label>
+                <input id="address" name="address" type="text" required="required" />
+                <br>
+                <label for="city"> City: </label>
+                <input id="city" name="city" type="text" required="required" />
+                <br>
+                <label for="postalcode"> Postal Code: </label>
+                <input id="postalcode" name="postalcode" type="text" required="required" />
+                <br>
+                <div id="errorPost"></div> 
+                <label for="province"> Province: </label>
+                <input id="province" name="province" type="text" required="required" />
+                <br>
+                <div id="errorProvince"></div> 
+                <label for="age"> Age: </label>
+                <input id="age" name="age" type="text" required="required" />
+                <div id="errorAge"></div> 
+                <br>
+                <label for="password"> Password: </label>
+                <input id="password" name="password" type="text" required="required" />
+                <br>
+                <label for="confirmpwd"> Confirm Password: </label>
+                <input id="confirmpwd" name="confirmpasswors" type="text" required="required" />
+                <div id="errorPassword"></div>
+                <br>
+                <label for="email"> Email </label>
+                <input id="email" name="email" type="text" required="required" />
+                <div id="errorEmail"></div> 
+                <br><br>
+                <div id="errorText"></div> 
+
+            </fieldset>
+            <div id="buttonContainer">
+                <input type="submit" value="Register Now!" id="submitinfo" />
+                <input type="reset" value="Clear Form" id="resetpage" />
+             </div>
+        </form>
+        </div>
+    </article>
+    <script src= "Assignment4.js"></script>
+</body>
+
+<footer>
+    <p><b>
+       &#169; Copyright Priyanka Kediya - COMP 125 - Summer Semester
+    </b></p>
+</footer>
+</html>    

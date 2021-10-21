@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+        Assignment 4
+        Student name: Priyanka Kediya
+        Student ID: 301184183
+        Date: 15 July 2021
+
+        Filename: Assignment4Result.html
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=page-width, initial-scale=1.0">
+   
+    <link rel= "stylesheet" href="Assignment4.css" />
+    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+    <title> Assignment #4 </title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                Member Registration
+            </h1>          
+        </header>
+        <h2>Your form has been submitted</h2>
+
+        <div class="results">
+            <h3>You entered the following data:</h3>
+      
+            <script>
+                var formData = location.search;
+             formData = formData.substring(1, formData.length);
+             while (formData.indexOf("+") !== -1) {
+                formData = formData.replace("+", " ");
+             }
+             formData = decodeURIComponent(formData);
+             var formArray = formData.split("&");
+             for (var i = 0; i < formArray.length; i = i + 1) {
+                document.write("<p>" + formArray[i] + "</p>");
+             }
+         </script>
+      </div>
+    </body>
+
+    <footer>
+        <p>
+           &#169; Copyright Priyanka Kediya - COMP 125 - Summer Semester
+        </p>
+    </footer>
+</html>    

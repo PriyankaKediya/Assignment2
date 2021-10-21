@@ -1,9 +1,11 @@
 "use strict";
-/*
-* Author     : Tom Tsiliopoulos
-* Date       : September 20, 2021
-* Description: Demo Project for COMP229-F2021-Lesson3
+/* 
+Filename: app.js
+Name: Priyanka Kediya
+Id: 301184183
+Date: 10 October, 2021
 */
+
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
