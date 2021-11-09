@@ -11,4 +11,4 @@ export let RemoteURI = "mongodb+srv://priyanka:WyVc4m0EkNidYbEe@comp229-f2021.r3
 //export const RemoteURI = process.env.RemoteURI;
 export const HostName = (process.env.RemoteURI) ? "remotohost" : "localhost";
 export const Secret = "someSecret";
-//export const HostName = "localhost";
+export const HostName = "localhost";
