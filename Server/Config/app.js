@@ -1,11 +1,10 @@
 "use strict";
-/* 
+/*
 Filename: app.js
 Name: Priyanka Kediya
 Id: 301184183
 Date: 10 October, 2021
 */
-
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -34,11 +33,32 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const morgan_1 = __importDefault(require("morgan"));
+// authentication modules
+const express_session_1 = __importDefault(require("express-session"));
+const passport_1 = __importDefault(require("passport"));
+const passport_local_1 = __importDefault(require("passport-local"));
+//module for cors
+const cors_1 = __importDefault(require("cors"));
+//authentication objects
+let localStrategy = passport_local_1.default.Strategy;
+const user_1 = __importDefault(require("../Models/user"));
+//module for auth messaging and error management
+const connect_flash_1 = __importDefault(require("connect-flash"));
+// module for database setup
 const mongoose_1 = __importDefault(require("mongoose"));
 const index_1 = __importDefault(require("../Routes/index"));
 const app = (0, express_1.default)();
 exports.default = app;
-
+//DB configuration
+const DBConfig = __importStar(require("./db"));
+mongoose_1.default.connect(DBConfig.LocalURI);
+const db = mongoose_1.default.connection; //alias for the mongoose connection
+db.on("error", function () {
+    console.error("Connection error");
+});
+db.once("open", function () {
+    console.log(`Connected to MongoDB at: ${DBConfig.HostName} `);
+});
 // view engine setup
 app.set('views', path_1.default.join(__dirname, '../Views'));
 app.set('view engine', 'ejs');
@@ -48,6 +68,24 @@ app.use(express_1.default.urlencoded({ extended: false }));
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../Client')));
 app.use(express_1.default.static(path_1.default.join(__dirname, '../../node_modules')));
+// add support for cors object
+app.use((0, cors_1.default)());
+//setup express session
+app.use((0, express_session_1.default)({
+    secret: DBConfig.Secret,
+    saveUninitialized: false,
+    resave: false
+}));
+//initialize connect-flash
+app.use((0, connect_flash_1.default)());
+//initialize passport
+app.use(passport_1.default.initialize());
+app.use(passport_1.default.session());
+//implement an auth strategy - "local" - username / password
+passport_1.default.use(user_1.default.createStrategy());
+// serialize and deserialize user data
+passport_1.default.serializeUser(user_1.default.serializeUser());
+passport_1.default.deserializeUser(user_1.default.deserializeUser());
 app.use('/', index_1.default);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

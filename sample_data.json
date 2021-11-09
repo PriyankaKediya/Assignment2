@@ -1,10 +1,14 @@
 {
 
-    "games":
+    "contacts":
     [
-        { "name": "Red Dead Redemption 2", "genre": "Action Adventure", "developer": "RockStar", "Cost": 79.99 },
-        { "name": "Dark Souls III", "genre": "Fantasy Adventure", "developer": "From Software", "Cost": 66.49 },
-        { "name": "Fallout 4", "genre": "Sci-Fi RPG", "developer": "Bethesda", "Cost": 26.99 }
+        
+        { "contactName": "Emily Geller", "contactNumber": "+16478872346", "emailAddress": "emilygeller@gmail.com" },
+        { "contactName": "Rhea Adams", "contactNumber": "+16471234567", "emailAddress": "rheaadams@gmail.com" },
+        { "contactName": "Priyanka Kediya", "contactNumber": "+16471238967", "emailAddress": "priyankakediya@gmail.com" },
+        { "contactName": "Elle Johnson", "contactNumber": "+16471238967", "emailAddress": "elle@gmail.com" },
+        { "contactName": "Paris Hilton", "contactNumber": "+16471238980", "emailAddress": "paris@gmail.com" },
+        { "contactName": "Karisma Verma", "contactNumber": "+16475638967", "emailAddress": "karismaverma@gmail.com" }
     ]
 
 }

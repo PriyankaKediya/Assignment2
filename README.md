@@ -1,3 +1,3 @@
-# COMP229-F2021-Lesson3
+# Assignment 2
 
-This is a demo project for COMP229 in the Fall 2021 semester, week 3
+This is assignment 2 for COMP229 in the Fall 2021 semester.
