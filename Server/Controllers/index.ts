@@ -8,7 +8,7 @@ Date: 10 October, 2021
 import express, {Request, Response, NextFunction} from 'express';
 
 import passport from 'passport';
-
+import { UserDisplayName } from "../Util";
 // create an instance of the user model
 import User from '../Models/user';
 
@@ -17,27 +17,27 @@ import BusinessContacts from '../Models/business-contacts';
 
 export function DisplayHomePage(req: Request, res: Response, next: NextFunction)
 {
-    res.render('index', { title: 'Home', page: 'home'});
+    res.render('index', { title: 'Home', page: 'home',displayName: UserDisplayName(req)});
 }
 
 export function DisplayAboutPage(req: Request, res: Response, next: NextFunction)
 {
-    res.render('index', { title: 'About Me', page: 'about'});
+    res.render('index', { title: 'About Me', page: 'about',displayName: UserDisplayName(req)});
 }
 
 export function DisplayProjectsPage(req: Request, res: Response, next: NextFunction)
 {
-    res.render('index', { title: 'Projects', page: 'projects' });
+    res.render('index', { title: 'Projects', page: 'projects',displayName: UserDisplayName(req) });
 }
 
 export function DisplayServicesPage(req: Request, res: Response, next: NextFunction)
 {
-    res.render('index', { title: 'Services', page: 'services' });
+    res.render('index', { title: 'Services', page: 'services',displayName: UserDisplayName(req) });
 }
 
 export function DisplayContactPage(req: Request, res: Response, next: NextFunction)
 {
-    res.render('index', { title: 'Contact Me', page: 'contact' });
+    res.render('index', { title: 'Contact Me', page: 'contact',displayName: UserDisplayName(req) });
 }
 
 export function DisplayBusinessContactPage(req: Request, res: Response, next: NextFunction)
@@ -53,7 +53,8 @@ export function DisplayBusinessContactPage(req: Request, res: Response, next: Ne
         res.render('index', 
         { title: 'Business Contacts', 
         page: 'business-contacts',
-        businessContacts: contactsCollection
+        businessContacts: contactsCollection,
+        displayName: UserDisplayName(req)
         });
     });     
 }
@@ -62,7 +63,7 @@ export function DisplayBusinessContactPage(req: Request, res: Response, next: Ne
 
 export function DisplayLoginPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Login', page: 'login'});
+    res.render('index', { title: 'Login', page: 'login',displayName: UserDisplayName(req)});
 }
 
 export function ProcessLoginPage(req: Request, res: Response, next: NextFunction): void
@@ -99,7 +100,7 @@ export function ProcessLoginPage(req: Request, res: Response, next: NextFunction
 
 export function DisplayRegisterPage(req: Request, res: Response, next: NextFunction): void
 {
-    res.render('index', { title: 'Register', page: 'register'});
+    res.render('index', { title: 'Register', page: 'register',displayName: UserDisplayName(req)});
 }
 
 export function ProcessRegisterPage(req: Request, res: Response, next: NextFunction): void
@@ -158,7 +159,7 @@ export function EditPage(req: Request, res: Response, next: NextFunction): void
         }
         else
         {
-            res.render('index', { title: 'Edit Contacts', contacts: contacts,  page : 'edit'});
+            res.render('index', { title: 'Edit Contacts', contacts: contacts,  page : 'edit',displayName: UserDisplayName(req)});
         }        
     });    
 }

@@ -1,11 +1,10 @@
-/* 
-Filename: business-contacts.js
+"use strict";
+/*
+Filename: business-contacts.ts
 Name: Priyanka Kediya
 Id: 301184183
 Date: 10 October, 2021
 */
-
-"use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };

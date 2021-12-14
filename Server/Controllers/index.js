@@ -1,72 +1,39 @@
-/* 
-Filename: index.js
+"use strict";
+/*
+Filename: index.ts
 Name: Priyanka Kediya
 Id: 301184183
 Date: 10 October, 2021
 */
-
-
-"use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.performDelete = exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.DisplayRegisterPage = exports.ProcessLoginPage = exports.DisplayLoginPage = exports.DisplayBusinessContactPage = exports.DisplayContactPage = exports.DisplayServicesPage = exports.DisplayProjectsPage = exports.DisplayAboutPage = exports.DisplayHomePage = exports.ProcessEditPage = exports.EditPage = void 0;
+exports.performDelete = exports.ProcessEditPage = exports.EditPage = exports.ProcessLogoutPage = exports.ProcessRegisterPage = exports.DisplayRegisterPage = exports.ProcessLoginPage = exports.DisplayLoginPage = exports.DisplayBusinessContactPage = exports.DisplayContactPage = exports.DisplayServicesPage = exports.DisplayProjectsPage = exports.DisplayAboutPage = exports.DisplayHomePage = void 0;
 const passport_1 = __importDefault(require("passport"));
+const Util_1 = require("../Util");
 // create an instance of the user model
 const user_1 = __importDefault(require("../Models/user"));
 //get a reference to the Business Contacts Model Class
 const business_contacts_1 = __importDefault(require("../Models/business-contacts"));
-function EditPage(req, res, next) {
-    let id = req.params.id;
-    business_contacts_1.default.findById(id, (err, contacts) => {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        }
-        else {
-            res.render('index', { title: 'Edit Contacts', contacts: contacts, page: 'edit' });
-        }
-    });
-}
-exports.EditPage = EditPage;
-function ProcessEditPage(req, res, next) {
-    let id = req.params.id;
-    let updatedContact = new business_contacts_1.default({
-        "_id": id,
-        "contactName": req.body.contactName,
-        "contactNumber": req.body.contactNumber,
-        "emailAddress": req.body.emailAddress
-    });
-    business_contacts_1.default.updateOne({ _id: id }, updatedContact, (err) => {
-        if (err) {
-            console.log(err);
-            res.end(err);
-        }
-        else {
-            res.redirect('/business-contacts');
-        }
-    });
-}
-exports.ProcessEditPage = ProcessEditPage;
 function DisplayHomePage(req, res, next) {
-    res.render('index', { title: 'Home', page: 'home' });
+    res.render('index', { title: 'Home', page: 'home', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayHomePage = DisplayHomePage;
 function DisplayAboutPage(req, res, next) {
-    res.render('index', { title: 'About Me', page: 'about' });
+    res.render('index', { title: 'About Me', page: 'about', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayAboutPage = DisplayAboutPage;
 function DisplayProjectsPage(req, res, next) {
-    res.render('index', { title: 'Projects', page: 'projects' });
+    res.render('index', { title: 'Projects', page: 'projects', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayProjectsPage = DisplayProjectsPage;
 function DisplayServicesPage(req, res, next) {
-    res.render('index', { title: 'Services', page: 'services' });
+    res.render('index', { title: 'Services', page: 'services', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayServicesPage = DisplayServicesPage;
 function DisplayContactPage(req, res, next) {
-    res.render('index', { title: 'Contact Me', page: 'contact' });
+    res.render('index', { title: 'Contact Me', page: 'contact', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayContactPage = DisplayContactPage;
 function DisplayBusinessContactPage(req, res, next) {
@@ -77,14 +44,15 @@ function DisplayBusinessContactPage(req, res, next) {
         }
         res.render('index', { title: 'Business Contacts',
             page: 'business-contacts',
-            businessContacts: contactsCollection
+            businessContacts: contactsCollection,
+            displayName: (0, Util_1.UserDisplayName)(req)
         });
     });
 }
 exports.DisplayBusinessContactPage = DisplayBusinessContactPage;
 /* functions for authentication */
 function DisplayLoginPage(req, res, next) {
-    res.render('index', { title: 'Login', page: 'login' });
+    res.render('index', { title: 'Login', page: 'login', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayLoginPage = DisplayLoginPage;
 function ProcessLoginPage(req, res, next) {
@@ -111,7 +79,7 @@ function ProcessLoginPage(req, res, next) {
 }
 exports.ProcessLoginPage = ProcessLoginPage;
 function DisplayRegisterPage(req, res, next) {
-    res.render('index', { title: 'Register', page: 'register' });
+    res.render('index', { title: 'Register', page: 'register', displayName: (0, Util_1.UserDisplayName)(req) });
 }
 exports.DisplayRegisterPage = DisplayRegisterPage;
 function ProcessRegisterPage(req, res, next) {
@@ -143,7 +111,38 @@ function ProcessLogoutPage(req, res, next) {
     res.redirect('/login');
 }
 exports.ProcessLogoutPage = ProcessLogoutPage;
-//////////////////////////////////////////////////////////////////
+function EditPage(req, res, next) {
+    let id = req.params.id;
+    business_contacts_1.default.findById(id, (err, contacts) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.render('index', { title: 'Edit Contacts', contacts: contacts, page: 'edit', displayName: (0, Util_1.UserDisplayName)(req) });
+        }
+    });
+}
+exports.EditPage = EditPage;
+function ProcessEditPage(req, res, next) {
+    let id = req.params.id;
+    let updatedContact = new business_contacts_1.default({
+        "_id": id,
+        "contactName": req.body.contactName,
+        "contactNumber": req.body.contactNumber,
+        "emailAddress": req.body.emailAddress
+    });
+    business_contacts_1.default.updateOne({ _id: id }, updatedContact, (err) => {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.redirect('/business-contacts');
+        }
+    });
+}
+exports.ProcessEditPage = ProcessEditPage;
 function performDelete(req, res, next) {
     let id = req.params.id;
     business_contacts_1.default.remove({ _id: id }, (err) => {
